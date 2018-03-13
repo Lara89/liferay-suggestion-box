@@ -6,4 +6,7 @@
     .suggestion-meta-info {
         font-style: italic;
     }
+    .taglib-search-iterator-page-iterator-top {
+    	display: none;
+    }
 }

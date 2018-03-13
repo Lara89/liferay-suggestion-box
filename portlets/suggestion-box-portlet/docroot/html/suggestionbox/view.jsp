@@ -120,6 +120,18 @@
 
 	<liferay-ui:section>
 		<c:if test='<%="all-suggestions".equals(tabs1)%>'>
+			<c:if
+				test='<%=SuggestionModelPermission.contains(
+									permissionChecker, scopeGroupId, "ADD")%>'>
+
+				<aui:button-row cssClass="guestbook-buttons">
+
+					<aui:button name="addSuggestionButton" value="add-suggestion"
+						onClick="${addSuggestionURL}" />
+
+				</aui:button-row>
+
+			</c:if>
 			<liferay-ui:search-container iteratorURL="<%=portletURL%>" emptyResultsMessage="no-suggestions" orderByCol="<%=orderByCol%>" orderByType="<%=orderByType%>" >
 				<liferay-ui:search-container-results
 					results="<%=SuggestionLocalServiceUtil
